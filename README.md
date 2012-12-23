@@ -3,14 +3,17 @@ kermit-emacs
 
 My Emacs24 configuration.
 
-Setup
------
+Install Emacs24
+---------------
 
 If you don't have it installed, you can get Emacs24 in Ubuntu
 
     sudo add-apt-repository ppa:cassou/emacs
     sudo apt-get update
     sudo apt-get install emacs-snapshot-gtk emacs-snapshot-el
+
+Deploy my settings
+------------------
 
 Position yourself to where you keep your code, e.g.
 
