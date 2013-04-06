@@ -1,3 +1,10 @@
+;; so that we can use emacsclient for future file-opening
+(server-start)
+
+;; MELPA package manager
+;;(add-to-list 'package-archives
+;;  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
 ;; color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'zenburn t)
