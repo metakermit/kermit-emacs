@@ -1,6 +1,7 @@
 *~
 session.*
 .emacs.d/elpa/**
+*.last
 
 /url/cache
 /.emacs.desktop
