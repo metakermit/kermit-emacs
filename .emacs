@@ -3,6 +3,10 @@
                            ;;("marmalade" . "http://marmalade-repo.org/packages/")
                            ("melpa" . "http://melpa.milkbox.net/packages/")))
 
+;; add the packages location to the load path
+(let ((default-directory "~/.emacs.d/elpa/"))
+      (normal-top-level-add-subdirs-to-load-path))
+
 ;; start server (if it ain't running already)
 ;; so that we can use emacsclient for future file-opening
 (load "server")
@@ -18,9 +22,17 @@
 (add-hook 'python-mode-hook 'pylint-add-menu-items)
 (add-hook 'python-mode-hook 'pylint-add-key-bindings)
 
+;; git-gutter - https://github.com/syohex/emacs-git-gutter
+(require 'git-gutter)
+(global-git-gutter-mode t)
+
 ;; color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'zenburn t)
+
+;; sublimity
+(require 'sublimity-scroll)
+(require 'sublimity-map)
 
 ;; title with file path
 ;;(setq frame-title-format '("Emacs @ " system-name ": %b %+%+ %f"))
