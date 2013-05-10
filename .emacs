@@ -43,7 +43,10 @@
 (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
 ;; stop the bell sound
-(setq visible-bell 1)
+;; only visible alarm
+;;(setq visible-bell 1)
+;; no alarm
+(setq ring-bell-function 'ignore)
 
 
 (custom-set-variables

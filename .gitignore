@@ -2,6 +2,7 @@
 session.*
 .emacs.d/elpa/**
 *.last
+.emacs.d/eshell/*
 
 /url/cache
 /.emacs.desktop
