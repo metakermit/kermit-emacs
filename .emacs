@@ -1,3 +1,13 @@
+;; start server (if it ain't running already)
+;; so that we can use emacsclient for future file-opening
+(load "server")
+(unless (server-running-p) (server-start))
+
+
+;; activate package.el
+(require 'package)
+(package-initialize)
+
 ;; set the package repositories - so far only melpa after reading http://batsov.com/articles/2012/04/06/melpa-homebrew-emacs-edition/
 (setq package-archives '(;;("gnu" . "http://elpa.gnu.org/packages/")
                            ;;("marmalade" . "http://marmalade-repo.org/packages/")
@@ -7,10 +17,44 @@
 (let ((default-directory "~/.emacs.d/elpa/"))
       (normal-top-level-add-subdirs-to-load-path))
 
-;; start server (if it ain't running already)
-;; so that we can use emacsclient for future file-opening
-(load "server")
-(unless (server-running-p) (server-start))
+;; ------------------install packages-----------------
+
+(require 'cl)
+;; Guarantee all packages are installed on start
+(defvar packages-list
+  '(
+    sublimity
+    git-gutter
+    web-mode
+    )
+    
+    ;; rainbow-mode
+    ;; fill-column-indicator
+    ;; clojure-mode
+    ;; cursor-chg
+    ;; highlight-indentation
+    ;; highlight-symbol
+    ;; markdown-mode
+    ;; php-mode
+    ;; protobuf-mode
+    ;; rvm)
+  "List of packages needs to be installed at launch")
+
+(defun has-package-not-installed ()
+  (loop for p in packages-list
+        when (not (package-installed-p p)) do (return t)
+        finally (return nil)))
+(when (has-package-not-installed)
+  ;; Check for new packages (package versions)
+  (message "%s" "Get latest versions of all packages...")
+  (package-refresh-contents)
+  (message "%s" " done.")
+  ;; Install the missing packages
+  (dolist (p packages-list)
+    (when (not (package-installed-p p))
+      (package-install p))))
+
+;; ---------------------------------------------------
 
 ;; ido-mode
 (require 'ido)
@@ -51,7 +95,8 @@
 
 ;; enable global clipboard access
 (setq x-select-enable-clipboard t)
-(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+;;(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+(setq interprogram-paste-function 'x-selection-value)
 
 ;; stop the bell sound
 ;; only visible alarm
