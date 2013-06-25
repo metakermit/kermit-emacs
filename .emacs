@@ -23,6 +23,7 @@
 ;; Guarantee all packages are installed on start
 (defvar packages-list
   '(
+    solarized-theme
     sublimity
     git-gutter
     web-mode
@@ -72,7 +73,8 @@
 
 ;; color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'zenburn t)
+;;(load-theme 'zenburn t)
+(load-theme 'solarized-dark t)
 
 ;; sublimity
 (require 'sublimity-scroll)
@@ -112,6 +114,7 @@
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
  '(column-number-mode t)
+ '(custom-safe-themes (quote ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(inhibit-startup-screen t)
  '(tool-bar-mode nil)
  '(tool-bar-position (quote left)))
