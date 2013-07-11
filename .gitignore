@@ -3,6 +3,8 @@ session.*
 .emacs.d/elpa/**
 *.last
 .emacs.d/eshell/*
+*.log
+.emacs.d/ac-comphist.dat
 
 /url/cache
 /.emacs.desktop

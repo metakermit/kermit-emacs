@@ -24,9 +24,10 @@
 (defvar packages-list
   '(
     solarized-theme
-    sublimity
+    ;;sublimity
     git-gutter
     web-mode
+    jedi
     )
     
     ;; rainbow-mode
@@ -67,6 +68,11 @@
 (add-hook 'python-mode-hook 'pylint-add-menu-items)
 (add-hook 'python-mode-hook 'pylint-add-key-bindings)
 
+;; jedi
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:setup-keys t)                      ; optional
+(setq jedi:complete-on-dot t)                 ; optional
+
 ;; git-gutter - https://github.com/syohex/emacs-git-gutter
 (require 'git-gutter)
 (global-git-gutter-mode t)
@@ -77,8 +83,8 @@
 (load-theme 'solarized-dark t)
 
 ;; sublimity
-(require 'sublimity-scroll)
-(require 'sublimity-map)
+;;(require 'sublimity-scroll)
+;;(require 'sublimity-map)
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
@@ -114,7 +120,9 @@
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
  '(column-number-mode t)
- '(custom-safe-themes (quote ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+ '(custom-safe-themes
+   (quote
+    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(inhibit-startup-screen t)
  '(tool-bar-mode nil)
  '(tool-bar-position (quote left)))
