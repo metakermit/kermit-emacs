@@ -1,0 +1,1 @@
+This folder is where packages get installed automatically.
