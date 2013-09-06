@@ -5,6 +5,8 @@ session.*
 .emacs.d/eshell/*
 *.log
 .emacs.d/ac-comphist.dat
+*.cache
+*.eld
 
 /url/cache
 /.emacs.desktop

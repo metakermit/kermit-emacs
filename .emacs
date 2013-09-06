@@ -23,6 +23,7 @@
 ;; Guarantee all packages are installed on start
 (defvar packages-list
   '(
+    helm-projectile
     ;;solarized-theme - issues in the terminal
     color-theme-solarized
     ;;sublimity
@@ -63,6 +64,16 @@
 (require 'ido)
 (ido-mode t)
 (setq ido-enable-flex-matching t) ;; enable fuzzy matching
+
+;; helm
+(require 'helm-config)
+(helm-mode 1)
+
+;; projectile
+(require 'projectile)
+(projectile-global-mode) ;; to enable in all buffers
+(setq projectile-enable-caching t) ;; useful for big projects
+(global-set-key (kbd "C-c h") 'helm-projectile) ;; find everything
 
 ;; pylint
 (autoload 'pylint "pylint")
