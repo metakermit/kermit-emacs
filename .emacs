@@ -112,6 +112,14 @@
 ;; no alarm
 (setq ring-bell-function 'ignore)
 
+;; OS X - toggle fullscreen
+(defun toggle-fullscreen ()
+  "Toggle full screen"
+  (interactive)
+  (set-frame-parameter
+     nil 'fullscreen
+     (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
