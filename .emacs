@@ -153,6 +153,49 @@
      (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
 
 
+;; zoom in/out
+;;-------------
+
+;; http://stackoverflow.com/questions/18783227/emacs-zoom-in-out-globally
+;; - first attempt
+;; (defun zoom-in()
+;;   (interactive)
+;;   (set-face-attribute 'default nil :height (+ (face-attribute 'default :height) 8)))
+;; (defun zoom-out()
+;;   (interactive)
+;;   (set-face-attribute 'default nil :height (- (face-attribute 'default :height) 8)))
+;; - works, but not for new files
+;;(defadvice text-scale-increase (around all-buffers (arg) activate)
+;;  (dolist (buffer (buffer-list))
+;;    (with-current-buffer buffer
+;;      ad-do-it)))
+
+;; http://www.emacswiki.org/emacs/GlobalTextScaleMode
+(define-globalized-minor-mode 
+    global-text-scale-mode
+    text-scale-mode
+    (lambda () (text-scale-mode 1)))
+  
+  (defun global-text-scale-adjust (inc) (interactive)
+    (text-scale-set 1)
+    (kill-local-variable 'text-scale-mode-amount)
+    (setq-default text-scale-mode-amount (+ text-scale-mode-amount inc))
+    (global-text-scale-mode 1)
+  )
+  (global-set-key (kbd "M-0")
+                  '(lambda () (interactive)
+                     (global-text-scale-adjust (- text-scale-mode-amount))
+                     (global-text-scale-mode -1)))
+  (global-set-key (kbd "M-+")
+                  '(lambda () (interactive) (global-text-scale-adjust 1)))
+  (global-set-key (kbd "M-=")
+                  '(lambda () (interactive) (global-text-scale-adjust 1)))
+  (global-set-key (kbd "M--")
+                  '(lambda () (interactive) (global-text-scale-adjust -1)))
+
+;; automatically created
+;;-----------------------
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
