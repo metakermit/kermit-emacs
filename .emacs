@@ -94,13 +94,6 @@
 ;;(load-theme 'zenburn t)
 (load-theme 'solarized-dark t)
 
-;; stuff specific to OS X
-(if (eq system-type 'darwin)
-  ;;(setq solarized-broken-srgb t)
-  (setq solarized-use-terminal-theme t)
-  ;;(sqtq solarized-termcolors 256)
-)
-
 ;; sublimity
 ;;(require 'sublimity-scroll)
 ;;(require 'sublimity-map)
@@ -125,33 +118,11 @@
 ;;(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 (setq interprogram-paste-function 'x-selection-value)
 
-;; clipboard on OS X
-(defun copy-from-osx ()
-  (shell-command-to-string "pbpaste"))
-
-(defun paste-to-osx (text &optional push)
-  (let ((process-connection-type nil))
-    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-      (process-send-string proc text)
-      (process-send-eof proc))))
-
-(setq interprogram-cut-function 'paste-to-osx)
-(setq interprogram-paste-function 'copy-from-osx)
-
 ;; stop the bell sound
 ;; only visible alarm
 ;;(setq visible-bell 1)
 ;; no alarm
 (setq ring-bell-function 'ignore)
-
-;; OS X - toggle fullscreen
-(defun toggle-fullscreen ()
-  "Toggle full screen"
-  (interactive)
-  (set-frame-parameter
-     nil 'fullscreen
-     (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
-
 
 ;; zoom in/out
 ;;-------------
@@ -192,6 +163,36 @@
                   '(lambda () (interactive) (global-text-scale-adjust 1)))
   (global-set-key (kbd "M--")
                   '(lambda () (interactive) (global-text-scale-adjust -1)))
+
+;; stuff specific to OS X
+;;--------------------------
+(if (eq system-type 'darwin) (
+   ;;(setq solarized-broken-srgb t)
+  (setq solarized-use-terminal-theme t)
+  ;;(sqtq solarized-termcolors 256)
+
+  ;; clipboard on OS X
+  (defun copy-from-osx ()
+    (shell-command-to-string "pbpaste"))
+
+  (defun paste-to-osx (text &optional push)
+    (let ((process-connection-type nil))
+      (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+        (process-send-string proc text)
+        (process-send-eof proc))))
+
+  (setq interprogram-cut-function 'paste-to-osx)
+  (setq interprogram-paste-function 'copy-from-osx)
+
+  ;; OS X - toggle fullscreen
+  (defun toggle-fullscreen ()
+    "Toggle full screen"
+    (interactive)
+    (set-frame-parameter
+       nil 'fullscreen
+       (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+ ))
+;;--------------------------
 
 ;; automatically created
 ;;-----------------------
