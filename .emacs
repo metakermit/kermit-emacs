@@ -172,32 +172,35 @@
 
 ;; stuff specific to OS X
 ;;--------------------------
-(if (eq system-type 'darwin) (
-   ;;(setq solarized-broken-srgb t)
-  (setq solarized-use-terminal-theme t)
-  ;;(sqtq solarized-termcolors 256)
+(if (eq system-type 'darwin)
+  (progn
+    ;;(setq solarized-broken-srgb t)
+    (setq solarized-use-terminal-theme t)
+    ;;(sqtq solarized-termcolors 256)
 
-  ;; clipboard on OS X
-  (defun copy-from-osx ()
-    (shell-command-to-string "pbpaste"))
+    ;; clipboard on OS X
+    (defun copy-from-osx ()
+      (shell-command-to-string "pbpaste"))
 
-  (defun paste-to-osx (text &optional push)
-    (let ((process-connection-type nil))
-      (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-        (process-send-string proc text)
-        (process-send-eof proc))))
+    (defun paste-to-osx (text &optional push)
+      (let ((process-connection-type nil))
+        (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+          (process-send-string proc text)
+          (process-send-eof proc))))
 
-  (setq interprogram-cut-function 'paste-to-osx)
-  (setq interprogram-paste-function 'copy-from-osx)
+    (setq interprogram-cut-function 'paste-to-osx)
+    (setq interprogram-paste-function 'copy-from-osx)
 
-  ;; OS X - toggle fullscreen
-  (defun toggle-fullscreen ()
-    "Toggle full screen"
-    (interactive)
-    (set-frame-parameter
-       nil 'fullscreen
-       (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
- ))
+    ;; OS X - toggle fullscreen
+    (defun toggle-fullscreen ()
+      "Toggle full screen"
+      (interactive)
+      (set-frame-parameter
+         nil 'fullscreen
+         (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+  )
+)
+
 ;;--------------------------
 
 ;; automatically created
