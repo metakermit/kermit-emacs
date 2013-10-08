@@ -127,6 +127,9 @@
 ;; no alarm
 (setq ring-bell-function 'ignore)
 
+;; follow symlinks to VC files automatically
+(setq vc-follow-symlinks nil)
+
 ;; zoom in/out
 ;;-------------
 
