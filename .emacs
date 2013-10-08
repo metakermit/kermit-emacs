@@ -8,10 +8,11 @@
 (require 'package)
 (package-initialize)
 
-;; set the package repositories - so far only melpa after reading http://batsov.com/articles/2012/04/06/melpa-homebrew-emacs-edition/
+;; set the package repositories - so far only melpa after reading
+;; http://batsov.com/articles/2012/04/06/melpa-homebrew-emacs-edition/
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                           ;;("marmalade" . "http://marmalade-repo.org/packages/")
-                           ("melpa" . "http://melpa.milkbox.net/packages/")))
+                         ;;("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 ;; add the packages location to the load path
 (let ((default-directory "~/.emacs.d/elpa/"))
@@ -131,6 +132,11 @@
 ;; follow symlinks to VC files automatically
 (setq vc-follow-symlinks nil)
 
+;; 80-column rule
+(require 'whitespace)
+(setq whitespace-style '(face empty tabs lines-tail trailing))
+(global-whitespace-mode t)
+
 ;; zoom in/out
 ;;-------------
 
@@ -138,10 +144,14 @@
 ;; - first attempt
 ;; (defun zoom-in()
 ;;   (interactive)
-;;   (set-face-attribute 'default nil :height (+ (face-attribute 'default :height) 8)))
+;;   (set-face-attribute 'default nil :height (
+;;         + (face-attribute 'default :height) 8))
+;;   )
 ;; (defun zoom-out()
 ;;   (interactive)
-;;   (set-face-attribute 'default nil :height (- (face-attribute 'default :height) 8)))
+;;   (set-face-attribute 'default nil :height (
+;;         - (face-attribute 'default :height) 8))
+;;   )
 ;; - works, but not for new files
 ;;(defadvice text-scale-increase (around all-buffers (arg) activate)
 ;;  (dolist (buffer (buffer-list))

@@ -25,7 +25,8 @@ Clone the git repo
 
 Run the deployment script.
 
-*Warning:* running this script will move your existing settings files to `~/old-emacs-settings`
+*Warning:* running this script will move your existing settings files
+to `~/old-emacs-settings`
 
     ./deploy-links.sh
 
