@@ -9,7 +9,7 @@
 (package-initialize)
 
 ;; set the package repositories - so far only melpa after reading http://batsov.com/articles/2012/04/06/melpa-homebrew-emacs-edition/
-(setq package-archives '(;;("gnu" . "http://elpa.gnu.org/packages/")
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                            ;;("marmalade" . "http://marmalade-repo.org/packages/")
                            ("melpa" . "http://melpa.milkbox.net/packages/")))
 
@@ -30,6 +30,7 @@
     git-gutter
     web-mode
     jedi
+    magit
     )
     
     ;; rainbow-mode
