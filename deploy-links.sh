@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# create folders if not there
+mkdir -p ~/.emacs.d/elpa
+
 # backup old confs (if they exist)
 loc=~/old-emacs-settings/
 echo Moving old settings to $loc
