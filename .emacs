@@ -32,6 +32,7 @@
     web-mode
     jedi
     magit
+    markdown-mode
     )
     
     ;; rainbow-mode
@@ -40,7 +41,6 @@
     ;; cursor-chg
     ;; highlight-indentation
     ;; highlight-symbol
-    ;; markdown-mode
     ;; php-mode
     ;; protobuf-mode
     ;; rvm)
@@ -167,27 +167,27 @@
 ;;      ad-do-it)))
 
 ;; http://www.emacswiki.org/emacs/GlobalTextScaleMode
-(define-globalized-minor-mode 
-    global-text-scale-mode
-    text-scale-mode
-    (lambda () (text-scale-mode 1)))
+;; (define-globalized-minor-mode 
+;;     global-text-scale-mode
+;;     text-scale-mode
+;;     (lambda () (text-scale-mode 1)))
   
-  (defun global-text-scale-adjust (inc) (interactive)
-    (text-scale-set 1)
-    (kill-local-variable 'text-scale-mode-amount)
-    (setq-default text-scale-mode-amount (+ text-scale-mode-amount inc))
-    (global-text-scale-mode 1)
-  )
-  (global-set-key (kbd "M-0")
-                  '(lambda () (interactive)
-                     (global-text-scale-adjust (- text-scale-mode-amount))
-                     (global-text-scale-mode -1)))
-  (global-set-key (kbd "M-+")
-                  '(lambda () (interactive) (global-text-scale-adjust 1)))
-  (global-set-key (kbd "M-=")
-                  '(lambda () (interactive) (global-text-scale-adjust 1)))
-  (global-set-key (kbd "M--")
-                  '(lambda () (interactive) (global-text-scale-adjust -1)))
+;;   (defun global-text-scale-adjust (inc) (interactive)
+;;     (text-scale-set 1)
+;;     (kill-local-variable 'text-scale-mode-amount)
+;;     (setq-default text-scale-mode-amount (+ text-scale-mode-amount inc))
+;;     (global-text-scale-mode 1)
+;;   )
+;;   (global-set-key (kbd "M-0")
+;;                   '(lambda () (interactive)
+;;                      (global-text-scale-adjust (- text-scale-mode-amount))
+;;                      (global-text-scale-mode -1)))
+;;   (global-set-key (kbd "M-+")
+;;                   '(lambda () (interactive) (global-text-scale-adjust 1)))
+;;   (global-set-key (kbd "M-=")
+;;                   '(lambda () (interactive) (global-text-scale-adjust 1)))
+;;   (global-set-key (kbd "M--")
+;;                   '(lambda () (interactive) (global-text-scale-adjust -1)))
 
 ;; stuff specific to OS X
 ;;--------------------------
