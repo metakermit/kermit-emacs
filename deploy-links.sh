@@ -7,8 +7,12 @@ mkdir -p ~/.emacs.d/elpa
 loc=~/old-emacs-settings/
 echo Moving old settings to $loc
 mkdir -p $loc
-mv ~/.emacs $loc
-mv ~/.emacs.d $loc
+if [ -f ~/.emacs ]; then
+    mv ~/.emacs $loc
+fi
+if [ -d ~/.emacs.d ]; then
+    mv ~/.emacs.d $loc
+fi
 
 # create links to new settings
 loc="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
