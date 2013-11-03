@@ -145,6 +145,9 @@
           (delq (current-buffer) 
                 (remove-if-not 'buffer-file-name (buffer-list)))))
 
+;; spaces, not tabs, please!
+(setq-default indent-tabs-mode nil)
+
 ;; zoom in/out
 ;;-------------
 
