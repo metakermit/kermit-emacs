@@ -34,7 +34,7 @@
     magit
     markdown-mode
     )
-    
+
     ;; rainbow-mode
     ;; fill-column-indicator
     ;; clojure-mode
@@ -118,10 +118,14 @@
 ;;(setq frame-title-format '("Emacs @ " system-name ": %b %+%+ %f"))
 (setq frame-title-format '("%b (%f)"))
 
-;; enable global clipboard access
-(setq x-select-enable-clipboard t)
-;;(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
-(setq interprogram-paste-function 'x-selection-value)
+(if (eq window-system 'X)
+    (progn
+      ;; enable global clipboard access
+      (setq x-select-enable-clipboard t)
+      ;;(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+      (setq interprogram-paste-function 'x-selection-value)
+    )
+)
 
 ;; stop the bell sound
 ;; only visible alarm
@@ -141,8 +145,8 @@
 (defun kill-other-buffers ()
     "Kill all other buffers."
     (interactive)
-    (mapc 'kill-buffer 
-          (delq (current-buffer) 
+    (mapc 'kill-buffer
+          (delq (current-buffer)
                 (remove-if-not 'buffer-file-name (buffer-list)))))
 
 ;; spaces, not tabs, please!
