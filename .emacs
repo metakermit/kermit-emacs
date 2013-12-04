@@ -1,4 +1,4 @@
-;; start server (if it ain't running already)
+; start server (if it ain't running already)
 ;; so that we can use emacsclient for future file-opening
 (load "server")
 (unless (server-running-p) (server-start))
@@ -33,6 +33,7 @@
     jedi
     magit
     markdown-mode
+    js2-mode
     )
 
     ;; rainbow-mode
@@ -68,7 +69,7 @@
 (setq ido-enable-flex-matching t) ;; enable fuzzy matching
 ;; don't complete while I'm in dired
 (add-hook 'dired-mode-hook
-	  '(lambda () (setq ido-enable-replace-completing-read nil)))
+          '(lambda () (setq ido-enable-replace-completing-read nil)))
 
 ;; helm
 (require 'helm-config)
@@ -113,6 +114,11 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+;; js2-mode
+(require 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
 ;; title with file path
 ;;(setq frame-title-format '("Emacs @ " system-name ": %b %+%+ %f"))
