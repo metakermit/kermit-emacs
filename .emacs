@@ -158,6 +158,12 @@
 ;; spaces, not tabs, please!
 (setq-default indent-tabs-mode nil)
 
+;; new files modified straight away (so that dired shows them right away)
+(add-hook 'find-file-hooks 'assume-new-is-modified)
+(defun assume-new-is-modified ()
+  (when (not (file-exists-p (buffer-file-name)))
+    (set-buffer-modified-p t)))
+
 ;; zoom in/out
 ;;-------------
 
