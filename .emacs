@@ -34,6 +34,9 @@
     magit
     markdown-mode
     js2-mode
+    skewer-mode
+    auto-complete
+    ac-js2
     )
 
     ;; rainbow-mode
@@ -93,7 +96,7 @@
 
 ;; git-gutter - https://github.com/syohex/emacs-git-gutter
 (require 'git-gutter)
-(global-git-gutter-mode t)
+(global-git-gutter-mode +1)
 
 ;; color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
@@ -103,6 +106,15 @@
 ;; sublimity
 ;;(require 'sublimity-scroll)
 ;;(require 'sublimity-map)
+
+;; js2-mode
+(require 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
+;; js2 autocomplete
+;;(require 'ac-js2-mode)
+(add-hook 'js2-mode-hook 'ac-js2-mode)
+(setq ac-js2-evaluate-calls t)
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
@@ -114,11 +126,6 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-
-;; js2-mode
-(require 'js2-mode)
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
 ;; title with file path
 ;;(setq frame-title-format '("Emacs @ " system-name ": %b %+%+ %f"))
@@ -188,6 +195,12 @@
 (add-hook 'dired-mode-hook
           (lambda ()
             (dired-omit-mode 1)))
+
+;; multi-term
+;; ----------
+(load "~/.emacs.d/init/multi-term")
+
+
 ;;----------------
 
 ;; zoom in/out
