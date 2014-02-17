@@ -32,3 +32,7 @@
               (cons "M-p" 'term-send-raw-meta)
               (cons "M-y" 'term-send-raw-meta)
               (cons "C-y" 'term-send-raw))))
+
+;; scroll to bottom on output
+(when (require 'multi-term nil t)
+  (setq multi-term-scroll-to-bottom-on-output "all"))
