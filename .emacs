@@ -37,6 +37,7 @@
     skewer-mode
     auto-complete
     ac-js2
+    multi-term
     )
 
     ;; rainbow-mode
