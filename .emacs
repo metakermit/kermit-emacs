@@ -24,6 +24,8 @@
 ;; Guarantee all packages are installed on start
 (defvar packages-list
   '(
+    helm
+    projectile
     helm-projectile
     ;;solarized-theme - issues in the terminal
     color-theme-solarized
