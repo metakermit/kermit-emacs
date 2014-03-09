@@ -300,6 +300,11 @@
                           "Ubuntu Mono derivative Powerline")
     )
 
+    ;; multi-term special chars
+    (setq system-uses-terminfo nil)
+    ;; have to run this after installing:
+    ;; tic -o ~/.terminfo /Applications/Emacs.app/Contents/Resources/etc/e/eterm-color.ti
+
     ;; end specific to OS X
   )
 )
