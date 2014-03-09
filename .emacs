@@ -291,6 +291,16 @@
       (set-frame-parameter
          nil 'fullscreen
          (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+    ;; default font size (1/10pt)
+    (set-face-attribute 'default nil :height 180)
+    ;; font
+    ;;(set-face-attribute 'default nil :family "Consolas")
+    (when (member "Ubuntu Mono derivative Powerline" (font-family-list))
+      (set-face-attribute 'default nil :family
+                          "Ubuntu Mono derivative Powerline")
+    )
+
+    ;; end specific to OS X
   )
 )
 
