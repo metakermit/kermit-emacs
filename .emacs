@@ -40,6 +40,7 @@
     auto-complete
     ac-js2
     multi-term
+    yasnippet
     )
 
     ;; rainbow-mode
@@ -216,6 +217,12 @@
 
 (define-key global-map [f11] 'switch-fullscreen)
 
+;; yasnippet
+;;----------
+(add-to-list 'load-path
+              "~/.emacs.d/snippets")
+(require 'yasnippet)
+(yas-global-mode 1)
 
 ;;----------------
 
