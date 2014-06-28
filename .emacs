@@ -250,11 +250,11 @@
 ;;      ad-do-it)))
 
 ;; http://www.emacswiki.org/emacs/GlobalTextScaleMode
-;; (define-globalized-minor-mode 
+;; (define-globalized-minor-mode
 ;;     global-text-scale-mode
 ;;     text-scale-mode
 ;;     (lambda () (text-scale-mode 1)))
-  
+
 ;;   (defun global-text-scale-adjust (inc) (interactive)
 ;;     (text-scale-set 1)
 ;;     (kill-local-variable 'text-scale-mode-amount)
@@ -279,6 +279,9 @@
     ;;(setq solarized-broken-srgb t)
     (setq solarized-use-terminal-theme t)
     ;;(sqtq solarized-termcolors 256)
+
+    ;; default font size (otherwise it's very small)
+    (set-face-attribute 'default nil :height 160)
 
     ;; clipboard on OS X
     (defun copy-from-osx ()
