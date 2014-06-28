@@ -26,7 +26,7 @@
   '(
     helm
     projectile
-    helm-projectile
+    ;;helm-projectile - seems to be included in helm
     ;;solarized-theme - issues in the terminal
     color-theme-solarized
     ;;sublimity
