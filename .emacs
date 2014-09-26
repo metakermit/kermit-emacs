@@ -226,6 +226,12 @@
 (add-hook 'term-mode-hook (lambda()
                 (yas-minor-mode -1)))
 
+;; line numbers
+;;-------------
+(global-linum-mode t)
+(add-hook 'term-mode-hook (lambda()
+                (linum-mode 0)))
+
 ;;----------------
 
 ;; zoom in/out
