@@ -232,6 +232,10 @@
 (add-hook 'term-mode-hook (lambda()
                 (linum-mode 0)))
 
+;; highlight current line
+(global-hl-line-mode 1)
+
+
 ;;----------------
 
 ;; zoom in/out
