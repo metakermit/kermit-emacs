@@ -233,7 +233,13 @@
                 (linum-mode 0)))
 
 ;; highlight current line
+;;-----------------------
 (global-hl-line-mode 1)
+
+;; move between windows
+;;---------------------
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings 'meta))
 
 
 ;;----------------
