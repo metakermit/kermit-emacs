@@ -44,6 +44,7 @@
     multi-term
     yasnippet
     load-relative
+    cython-mode
     )
 
     ;; rainbow-mode
