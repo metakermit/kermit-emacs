@@ -45,6 +45,7 @@
     yasnippet
     load-relative
     cython-mode
+    yaml-mode
     )
 
     ;; rainbow-mode

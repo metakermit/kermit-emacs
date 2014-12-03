@@ -35,3 +35,4 @@
 (load-relative "./js2-mode")
 (load-relative "./web-mode")
 (load-relative "./yasnippet")
+(load-relative "./yaml-mode")
