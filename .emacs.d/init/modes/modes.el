@@ -36,3 +36,4 @@
 (load-relative "./web-mode")
 (load-relative "./yasnippet")
 (load-relative "./yaml-mode")
+(load-relative "./latex")

@@ -46,6 +46,7 @@
     load-relative
     cython-mode
     yaml-mode
+    auctex
     )
 
     ;; rainbow-mode
