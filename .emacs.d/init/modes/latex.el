@@ -13,3 +13,7 @@
                        (member (preceding-char) '(?\ ?\t ?\n ?~)))
                    cite
                  (concat "~" cite)))))
+
+;; check spelling for LaTeX
+;; http://stackoverflow.com/questions/15173004/
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
