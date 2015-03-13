@@ -6,3 +6,5 @@
 ;;(require 'ac-js2-mode)
 (add-hook 'js2-mode-hook 'ac-js2-mode)
 (setq ac-js2-evaluate-calls t)
+;; 2-space indent
+(setq-default js2-basic-offset 2)
