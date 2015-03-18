@@ -47,6 +47,7 @@
     cython-mode
     yaml-mode
     auctex
+    flycheck
     )
 
     ;; rainbow-mode

@@ -32,8 +32,8 @@
 ;;(require 'sublimity-scroll)
 ;;(require 'sublimity-map)
 
-(load-relative "./js2-mode")
-(load-relative "./web-mode")
 (load-relative "./yasnippet")
+(load-relative "./web-mode")
+(load-relative "./js2-mode")
 (load-relative "./yaml-mode")
 (load-relative "./latex")
