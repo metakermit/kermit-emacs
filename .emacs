@@ -48,6 +48,8 @@
     yaml-mode
     auctex
     flycheck
+    typo
+    json-mode
     )
 
     ;; rainbow-mode
