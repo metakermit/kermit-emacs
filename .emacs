@@ -50,6 +50,7 @@
     flycheck
     typo
     json-mode
+    editorconfig
     )
 
     ;; rainbow-mode

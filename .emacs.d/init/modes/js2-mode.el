@@ -3,8 +3,8 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
-;; 2-space indent
-(setq-default js2-basic-offset 2)
+;; 2-space indent - set through .editorconfig
+;; (setq-default js2-basic-offset 2)
 
 ;; js2 autocomplete
 (require 'ac-js2)
