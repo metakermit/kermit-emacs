@@ -51,6 +51,7 @@
     typo
     json-mode
     editorconfig
+    rsense
     )
 
     ;; rainbow-mode

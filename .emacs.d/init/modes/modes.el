@@ -37,3 +37,7 @@
 (load-relative "./js2-mode")
 (load-relative "./yaml-mode")
 (load-relative "./latex")
+
+
+;; ruby
+(load-relative "./ruby")
