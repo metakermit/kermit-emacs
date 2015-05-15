@@ -1,7 +1,9 @@
 ; start server (if it ain't running already)
 ;; so that we can use emacsclient for future file-opening
 (load "server")
-(unless (server-running-p) (server-start))
+(if (and (fboundp 'server-running-p)
+         (not (server-running-p)))
+   (server-start))
 
 ;; initialize the package infrastructure - TODO
 ;;(load "~/.emacs.d/init/packages")
