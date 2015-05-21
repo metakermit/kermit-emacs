@@ -1,6 +1,9 @@
 (require 'multi-term)
 (setq multi-term-program-switches "--login")
 
+;; Unicode encoding
+(setenv "LC_CTYPE" "UTF-8")
+
 ;; got most of this from:
 ;; http://paralambda.org/2012/07/02/using-gnu-emacs-as-a-terminal-emulator/
 
