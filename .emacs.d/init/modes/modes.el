@@ -3,9 +3,8 @@
 (load-relative "./ido")
 
 ;; helm
-;; TODO: fix error!
-;;(require 'helm-config)
-;;(helm-mode 1)
+(require 'helm-config)
+(helm-mode 1)
 
 ;; projectile
 (require 'projectile)
