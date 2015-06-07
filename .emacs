@@ -41,6 +41,7 @@
     magit
     markdown-mode
     js2-mode
+    coffee-mode
     skewer-mode
     auto-complete
     ac-js2

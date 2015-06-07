@@ -32,6 +32,7 @@
 (load-relative "./yasnippet")
 (load-relative "./web-mode")
 (load-relative "./js2-mode")
+(load-relative "./coffee")
 (load-relative "./yaml-mode")
 (load-relative "./latex")
 
