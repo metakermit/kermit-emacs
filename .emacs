@@ -8,15 +8,20 @@
 ;; initialize the package infrastructure - TODO
 ;;(load "~/.emacs.d/init/packages")
 
-;; activate package.el
-(require 'package)
-(package-initialize)
+;; packages
+(when (>= emacs-major-version 24)
+  ;; activate package.el
+  (require 'package)
+  (package-initialize)
+  (add-to-list 'package-archives
+               '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-;; set the package repositories - so far only melpa after reading
-;; http://batsov.com/articles/2012/04/06/melpa-homebrew-emacs-edition/
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ;;("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+  ;; ;; set the package repositories - so far only melpa after reading
+  ;; ;; http://batsov.com/articles/2012/04/06/melpa-homebrew-emacs-edition/
+  ;; (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+  ;;                          ;;("marmalade" . "http://marmalade-repo.org/packages/")
+  ;;                          ("melpa" . "http://melpa.milkbox.net/packages/")))
+  )
 
 ;; add the packages location to the load path
 (let ((default-directory "~/.emacs.d/elpa/"))
@@ -74,21 +79,26 @@
   (loop for p in packages-list
         when (not (package-installed-p p)) do (return t)
         finally (return nil)))
-(when (has-package-not-installed)
-  ;; Check for new packages (package versions)
-  (message "%s" "Get latest versions of all packages...")
-  (package-refresh-contents)
-  (message "%s" " done.")
-  ;; Install the missing packages
-  (dolist (p packages-list)
-    (when (not (package-installed-p p))
-      (package-install p))))
+
+(when (>= emacs-major-version 24)
+  (when (has-package-not-installed)
+    ;; Check for new packages (package versions)
+    (message "%s" "Get latest versions of all packages...")
+    (package-refresh-contents)
+    (message "%s" " done.")
+    ;; Install the missing packages
+    (dolist (p packages-list)
+      (when (not (package-installed-p p))
+        (package-install p))))
+  )
 ;; ---------------------------------------------------
 
 
 ;; load the main config file which relatively loads all the submodules
-(require 'load-relative)
-(load-relative "~/.emacs.d/init/config")
+(when (>= emacs-major-version 24)
+  (require 'load-relative)
+  (load-relative "~/.emacs.d/init/config")
+  )
 
 
 ;; automatically created
