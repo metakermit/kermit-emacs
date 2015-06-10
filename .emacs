@@ -62,6 +62,7 @@
     json-mode
     editorconfig
     rsense
+    neotree
     )
 
     ;; rainbow-mode
