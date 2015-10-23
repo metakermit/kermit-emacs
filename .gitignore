@@ -1,16 +1,15 @@
 *~
-session.*
+session*
 *.last
-.emacs.d/eshell/*
 *.log
 .emacs.d/ac-comphist.dat
 *.cache
 *.eld
+elpa
 
 /url/cache
 /.emacs.desktop
-/auto-save-list
-/.session
+auto-save-list
 /custom.el
 *.elc
 CVS
@@ -30,3 +29,22 @@ site-lisp/package/
 /.mc-lists.el
 /var
 .sx
+
+# Prelude
+recentf
+savehist
+saveplace
+eshell
+elpa
+el-get
+semanticdb
+url
+ede-projects.el
+.DS_Store
+places
+.smex-items
+savefile/
+/prelude-modules.el
+projectile-bookmarks.eld
+.cask
+/var/pcache
