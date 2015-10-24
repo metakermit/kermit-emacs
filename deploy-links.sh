@@ -2,12 +2,13 @@
 
 # backup old confs (if they exist)
 loc=~/old-emacs-settings/
-echo Moving old settings to $loc
 mkdir -p $loc
 if [ -f ~/.emacs ]; then
+    echo Moving old ~/.emacs to $loc
     mv ~/.emacs $loc
 fi
 if [ -d ~/.emacs.d ]; then
+    echo Moving old ~/.emacs.d to $loc
     mv ~/.emacs.d $loc
 fi
 
