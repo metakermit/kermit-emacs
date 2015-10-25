@@ -7,3 +7,4 @@
 (load-relative "display-info")
 (load-relative "general-editing")
 (load-relative "./os/os")
+(load-relative "keybindings.el")
