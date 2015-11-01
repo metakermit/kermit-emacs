@@ -1,5 +1,6 @@
 ;;load all the el scripts
 
+(load-relative "./look/theme")
 (load-relative "./modes/modes")
 (load-relative "./uncategorised")
 (load-relative "./multi-term")

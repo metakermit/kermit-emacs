@@ -1,4 +1,4 @@
-;; Load and configure the various modes
+;; load and configure the various modes
 
 (load-relative "./ido")
 
@@ -17,12 +17,6 @@
 ;; git-gutter - https://github.com/syohex/emacs-git-gutter
 (require 'git-gutter)
 (global-git-gutter-mode +1)
-
-;; color theme
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-;;(load-theme 'zenburn t)
-;;(load-theme 'solarized-dark t)
-(load-theme 'solarized t)
 
 ;; sublimity
 ;;(require 'sublimity-scroll)
