@@ -81,7 +81,7 @@
         when (not (package-installed-p p)) do (return t)
         finally (return nil)))
 
-(when (>= emacs-major-version 24)
+(when (and (>= emacs-major-version 24) (display-graphic-p))
   (when (has-package-not-installed)
     ;; Check for new packages (package versions)
     (message "%s" "Get latest versions of all packages...")
