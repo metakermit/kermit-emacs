@@ -63,6 +63,7 @@
     editorconfig
     rsense
     neotree
+    dockerfile-mode
     )
 
     ;; rainbow-mode
