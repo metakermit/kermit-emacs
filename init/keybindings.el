@@ -5,3 +5,5 @@
 (global-set-key (kbd "C-c g") 'projectile-grep)
 
 (global-set-key (kbd "C-c e") 'eval-buffer)
+
+(global-set-key (kbd "C-c m s") 'magit-status)
