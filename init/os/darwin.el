@@ -30,7 +30,7 @@
          nil 'fullscreen
          (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
     (global-set-key (kbd "s-F") 'toggle-fullscreen)
-    
+
     ;; default font size (1/10pt)
     (set-face-attribute 'default nil :height 180)
     ;; font
@@ -44,6 +44,17 @@
     (setq system-uses-terminfo nil)
     ;; have to run this after installing:
     ;; tic -o ~/.terminfo /Applications/Emacs.app/Contents/Resources/etc/e/eterm-color.ti
+
+    ;; cmd + , to switch between frames
+    (setq mac-command-modifier 'meta)
+    ;;(global-set-key "\M-`" 'other-frame)
+    (global-set-key (kbd "s-`") 'other-frame)
+
+    ;; OS X emoji settings
+    (set-fontset-font
+     t 'symbol
+     (font-spec :family "Apple Color Emoji") nil 'prepend)
+
 
     ;; end specific to OS X
   )

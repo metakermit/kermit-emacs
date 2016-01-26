@@ -64,6 +64,7 @@
     rsense
     neotree
     dockerfile-mode
+    ac-emoji
     )
 
     ;; rainbow-mode
