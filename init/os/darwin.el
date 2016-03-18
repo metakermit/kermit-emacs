@@ -29,7 +29,8 @@
       (set-frame-parameter
          nil 'fullscreen
          (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
-    (global-set-key (kbd "s-F") 'toggle-fullscreen)
+    ;; (global-set-key (kbd "s-F") 'toggle-fullscreen)
+    (global-set-key (kbd "M-<f11>") 'toggle-fullscreen)
 
     ;; default font size (1/10pt)
     (set-face-attribute 'default nil :height 180)
