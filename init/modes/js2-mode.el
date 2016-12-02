@@ -3,6 +3,11 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
+;; rjsx-mode for React's .jsx
+(require 'rjsx-mode)
+;; (add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
+
 ;; 2-space indent - set through .editorconfig
 ;; (setq-default js2-basic-offset 2)
 
