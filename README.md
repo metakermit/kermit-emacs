@@ -1,7 +1,7 @@
 kermit-emacs
 ============
 
-My Emacs24 configuration.
+My Emacs configuration.
 
 Install Emacs24
 ---------------
@@ -21,7 +21,7 @@ Position yourself to where you keep your code, e.g.
 
 Clone the git repo
 
-    git clone https://github.com/kermit666/kermit-emacs.git
+    git clone https://github.com/metakermit/kermit-emacs.git
 
 Run the deployment script.
 
@@ -30,4 +30,4 @@ to `~/old-emacs-settings`
 
     ./deploy-links.sh
 
-Congratulations! You can now open emacs and enjoy it.
+Congratulations! You can now open Emacs and enjoy it.

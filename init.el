@@ -65,6 +65,7 @@
     neotree
     dockerfile-mode
     ac-emoji
+    exec-path-from-shell
     )
 
     ;; rainbow-mode

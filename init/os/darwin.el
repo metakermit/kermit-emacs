@@ -56,6 +56,11 @@
      t 'symbol
      (font-spec :family "Apple Color Emoji") nil 'prepend)
 
+    ;; https://github.com/purcell/exec-path-from-shell
+    ;; only need exec-path-from-shell on OSX
+    ;; this hopefully sets up path and other vars better
+    (exec-path-from-shell-initialize)
+
 
     ;; end specific to OS X
   )
