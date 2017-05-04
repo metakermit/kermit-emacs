@@ -114,11 +114,15 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
+ '(coffee-tab-width 2)
  '(column-number-mode t)
  '(custom-safe-themes
    (quote
     ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "073dbd38a7ce4f316eba2b0c9be8193d8ba58c0f0a399ce4c02aeda812fecf3f" "e16a771a13a202ee6e276d06098bc77f008b73bbac4d526f160faa2d76c1dd0e" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(fci-rule-color "#073642")
+ '(frame-background-mode (quote dark))
+ '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
+ '(help-at-pt-timer-delay 0.9)
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-tail-colors
    (quote
@@ -131,6 +135,9 @@
      ("#93115C" . 85)
      ("#073642" . 100))))
  '(inhibit-startup-screen t)
+ '(package-selected-packages
+   (quote
+    (yasnippet yaml-mode web-mode typo scss-mode sass-mode rsense rjsx-mode projectile nginx-mode neotree multi-term markdown-mode magit load-relative less-css-mode json-mode jedi helm git-gutter flymake-cursor flycheck exec-path-from-shell editorconfig dockerfile-mode cython-mode color-theme-solarized coffee-mode auctex ac-js2 ac-emoji)))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(tool-bar-position (quote left))
