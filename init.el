@@ -1,4 +1,7 @@
-; start server (if it ain't running already)
+;; increase memory limit to speed things up
+(setq gc-cons-threshold 100000000)
+
+;; start server (if it ain't running already)
 ;; so that we can use emacsclient for future file-opening
 (load "server")
 (if (and (fboundp 'server-running-p)
