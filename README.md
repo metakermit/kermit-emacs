@@ -3,17 +3,21 @@ kermit-emacs
 
 My Emacs configuration.
 
-Install Emacs24
----------------
+Install Emacs
+-------------
 
-If you don't have it installed, you can get Emacs24 in Ubuntu
+If you don't have it installed, you can get the current Emacs in Ubuntu by running:
 
-    sudo add-apt-repository ppa:cassou/emacs
+    sudo add-apt-repository ppa:ubuntu-elisp/ppa
     sudo apt-get update
-    sudo apt-get install emacs-snapshot-gtk emacs-snapshot-el
+    sudo apt-get install emacs-snapshot
 
-Deploy my settings
-------------------
+In OS X you can use [Homebrew](https://brew.sh/) with [Cask](https://caskroom.github.io/):
+
+    brew cask install emacs
+
+Deploy the settings
+-------------------
 
 Position yourself to where you keep your code, e.g.
 
