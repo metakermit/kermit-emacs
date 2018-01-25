@@ -48,6 +48,7 @@
 
     ;; cmd + , to switch between frames
     (setq mac-command-modifier 'meta)
+    (setq mac-option-modifier 'meta)
     ;;(global-set-key "\M-`" 'other-frame)
     (global-set-key (kbd "s-`") 'other-frame)
 

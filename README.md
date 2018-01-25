@@ -12,9 +12,12 @@ If you don't have it installed, you can get the current Emacs in Ubuntu by runni
     sudo apt-get update
     sudo apt-get install emacs-snapshot
 
-In OS X you can use [Homebrew](https://brew.sh/) with [Cask](https://caskroom.github.io/):
+In macOS you can use [Homebrew](https://brew.sh/) with [Cask](https://caskroom.github.io/)
+to install [Mitsuharu Yamamoto's fork](https://github.com/railwaycat/homebrew-emacsmacport)
+(with emoji support and other features):
 
-    brew cask install emacs
+    brew tap railwaycat/emacsmacport
+    brew install emacs-mac
 
 Deploy the settings
 -------------------
@@ -34,4 +37,4 @@ to `~/old-emacs-settings`
 
     ./deploy-links.sh
 
-Congratulations! You can now open Emacs and enjoy it.
+Congratulations! You can now open Emacs and enjoy your new settings.
