@@ -41,6 +41,7 @@
     ;;helm-projectile - seems to be included in helm
     ;;solarized-theme - issues in the terminal
     color-theme-solarized
+    gruvbox-theme
     ;;sublimity
     git-gutter
     web-mode
@@ -58,6 +59,7 @@
     load-relative
     cython-mode
     yaml-mode
+    typescript-mode
     auctex
     flycheck
     flymake-cursor
@@ -121,7 +123,7 @@
  '(column-number-mode t)
  '(custom-safe-themes
    (quote
-    ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "073dbd38a7ce4f316eba2b0c9be8193d8ba58c0f0a399ce4c02aeda812fecf3f" "e16a771a13a202ee6e276d06098bc77f008b73bbac4d526f160faa2d76c1dd0e" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+    ("3fa81193ab414a4d54cde427c2662337c2cab5dd4eb17ffff0d90bca97581eb6" "7366916327c60fdf17b53b4ac7f565866c38e1b4a27345fe7facbf16b7a4e9e8" "b050365105e429cb517d98f9a267d30c89336e36b109a1723d95bc0f7ce8c11d" "ed0b4fc082715fc1d6a547650752cd8ec76c400ef72eb159543db1770a27caa7" "42b9d85321f5a152a6aef0cc8173e701f572175d6711361955ecfb4943fe93af" "021720af46e6e78e2be7875b2b5b05344f4e21fad70d17af7acfd6922386b61e" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "073dbd38a7ce4f316eba2b0c9be8193d8ba58c0f0a399ce4c02aeda812fecf3f" "e16a771a13a202ee6e276d06098bc77f008b73bbac4d526f160faa2d76c1dd0e" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(fci-rule-color "#073642")
  '(frame-background-mode (quote dark))
  '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
@@ -140,7 +142,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (yasnippet yaml-mode web-mode typo scss-mode sass-mode rsense rjsx-mode projectile nginx-mode neotree multi-term markdown-mode magit load-relative less-css-mode json-mode jedi helm git-gutter flymake-cursor flycheck exec-path-from-shell editorconfig dockerfile-mode cython-mode color-theme-solarized coffee-mode auctex ac-js2 ac-emoji)))
+    (gruvbox-theme typescript-mode yasnippet yaml-mode web-mode typo scss-mode sass-mode rsense rjsx-mode projectile nginx-mode neotree multi-term markdown-mode magit load-relative less-css-mode json-mode jedi helm git-gutter flymake-cursor flycheck exec-path-from-shell editorconfig dockerfile-mode cython-mode color-theme-solarized coffee-mode auctex ac-js2 ac-emoji)))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(tool-bar-position (quote left))
